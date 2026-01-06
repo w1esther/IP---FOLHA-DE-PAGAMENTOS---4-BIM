@@ -1,6 +1,6 @@
 from utils.arquivo_json import ler_json, salvar_json
 
-CAMINHO_FUNCIONARIOS = "dados/funcionarios.json"
+CAMINHO_FUNCIONARIOS = "C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\funcionarios.json"
 
 def criar_funcionario():
     print("\n--- CADASTRO DE FUNCIONÁRIO ---")

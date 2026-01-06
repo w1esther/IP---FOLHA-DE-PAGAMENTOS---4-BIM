@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "id": 1,
+        "nome": "jonas",
+        "cpf": 1349595,
+        "telefone": 95968695,
+        "email": "ivedhfif@gmail.com",
+        "cargo": "dev",
+        "situacao": "Ativo"
+    }
+]
