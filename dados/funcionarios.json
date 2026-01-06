@@ -7,5 +7,14 @@
         "email": "ivedhfif@gmail.com",
         "cargo": "dev",
         "situacao": "Ativo"
+    },
+    {
+        "id": 2,
+        "nome": "lucas",
+        "cpf": 3838888,
+        "telefone": 383888922,
+        "email": "lucas@gmail.com",
+        "cargo": "dev",
+        "situacao": "Ativo"
     }
 ]

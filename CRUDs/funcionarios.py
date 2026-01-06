@@ -32,3 +32,25 @@ def criar_funcionario():
     salvar_json(CAMINHO_FUNCIONARIOS, funcionarios)
 
     print("\nFuncionário cadastrado com sucesso!\n")
+
+def listar_funcionarios():
+
+    print("\n--- LISTA DE FUNCIONÁRIOS ---\n")
+
+    funcionarios = ler_json(CAMINHO_FUNCIONARIOS)
+
+    if not funcionarios:
+        print("Nenhum funcionário cadastrado.\n")
+        return
+
+    for funcionario in funcionarios:
+        print(f"ID: {funcionario['id']}")
+        print(f"Nome: {funcionario['nome']}")
+        print(f"CPF: {funcionario['cpf']}")
+        print(f"Telefone: {funcionario['telefone']}")
+        print(f"Email: {funcionario['email']}")
+        print(f"Cargo: {funcionario['cargo']}")
+        print(f"Situação: {funcionario['situacao']}")
+        print("-" * 30)
+
+    print()

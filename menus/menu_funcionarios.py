@@ -1,4 +1,4 @@
-from CRUDs.funcionarios import criar_funcionario
+from CRUDs.funcionarios import criar_funcionario, listar_funcionarios
 
 def menu_funcionarios():
     while True:
@@ -13,3 +13,6 @@ def menu_funcionarios():
 
         if opcao_funcionarios == 1:
             criar_funcionario()
+
+        if opcao_funcionarios == 2:
+            listar_funcionarios()
