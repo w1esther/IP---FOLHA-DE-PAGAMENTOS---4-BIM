@@ -10,10 +10,19 @@
     },
     {
         "id": 2,
-        "nome": "lucas",
-        "cpf": 3838888,
-        "telefone": 383888922,
-        "email": "lucas@gmail.com",
+        "nome": "maria",
+        "cpf": 8388393,
+        "telefone": 2887272,
+        "email": "maria@gmail.com",
+        "cargo": "dev",
+        "situacao": "Ativo"
+    },
+    {
+        "id": 3,
+        "nome": "antonio",
+        "cpf": 38838383,
+        "telefone": 38383321,
+        "email": "antonio@gmail.com",
         "cargo": "dev",
         "situacao": "Ativo"
     }
