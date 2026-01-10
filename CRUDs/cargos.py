@@ -1,8 +1,8 @@
 import os
 from utils.arquivo_json import ler_json, salvar_json
  
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CAMINHO_CARGOS = os.path.join(BASE_DIR, "dados", "cargos.json")
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CAMINHO_CARGOS = "C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\cargos.json"
 
 def criar_cargo():
     print("\n--- CADASTRO DE CARGO ---")
