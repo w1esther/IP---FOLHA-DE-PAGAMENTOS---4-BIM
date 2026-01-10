@@ -1,4 +1,4 @@
-from CRUDs.cargos import criar_cargo, listar_cargos, buscar_cargo_por_id
+from CRUDs.cargos import criar_cargo, listar_cargos, buscar_cargo_por_id, atualizar_cargo, remover_cargo
 
 def menu_cargos():
     while True:
@@ -7,6 +7,8 @@ def menu_cargos():
               ' - 1 Criar \n\n'
               ' - 2 Listar \n\n'
               ' - 3 Buscar por ID \n\n'
+              ' - 4 Remover cargo \n\n'
+              ' - 5 Atualizar cargo \n\n'
               ' - 0 Sair do sistema \n\n')
 
         try:
@@ -23,6 +25,12 @@ def menu_cargos():
 
         elif opcao_cargos == 3:
             buscar_cargo_por_id()
+
+        elif opcao_cargos == 4:
+            remover_cargo()
+
+        elif opcao_cargos == 5:
+            atualizar_cargo()
 
         elif opcao_cargos == 0:
             break
