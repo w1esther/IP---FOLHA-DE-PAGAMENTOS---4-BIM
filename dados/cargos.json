@@ -1,0 +1,8 @@
+[
+    {
+        "id": 1,
+        "nome": "dev",
+        "salario_base": 3000.0,
+        "situacao": "Ativo"
+    }
+]
