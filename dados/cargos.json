@@ -4,5 +4,11 @@
         "nome": "dev",
         "salario_base": 3000.0,
         "situacao": "Ativo"
+    },
+    {
+        "id": 2,
+        "nome": "back-end",
+        "salario_base": 3500.0,
+        "situacao": "Ativo"
     }
 ]
