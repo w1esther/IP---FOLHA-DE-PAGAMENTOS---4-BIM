@@ -1,14 +1,62 @@
 [
     {
         "id": 1,
-        "nome": "dev",
+        "nome": "Desenvolvedor Junior",
         "salario_base": 3000.0,
         "situacao": "Ativo"
     },
     {
         "id": 2,
-        "nome": "back-end",
-        "salario_base": 3500.0,
+        "nome": "Desenvolvedor Pleno ",
+        "salario_base": 6000.0,
+        "situacao": "Ativo"
+    },
+    {
+        "id": 3,
+        "nome": "Desenvolvedor Senior ",
+        "salario_base": 10000.0,
+        "situacao": "Ativo"
+    },
+    {
+        "id": 4,
+        "nome": "Analista de Sistemas",
+        "salario_base": 6500.0,
+        "situacao": "Ativo"
+    },
+    {
+        "id": 5,
+        "nome": "Analista de Testes",
+        "salario_base": 4500.0,
+        "situacao": "Ativo"
+    },
+    {
+        "id": 6,
+        "nome": "Administrador de Banco de Dados ",
+        "salario_base": 8000.0,
+        "situacao": "Ativo"
+    },
+    {
+        "id": 7,
+        "nome": "Analista de Segurança da Informação",
+        "salario_base": 7500.0,
+        "situacao": "Ativo"
+    },
+    {
+        "id": 8,
+        "nome": "DevOps",
+        "salario_base": 9000.0,
+        "situacao": "Ativo"
+    },
+    {
+        "id": 9,
+        "nome": "Suporte Tecnico",
+        "salario_base": 2500.0,
+        "situacao": "Ativo"
+    },
+    {
+        "id": 10,
+        "nome": "Gerente de TI",
+        "salario_base": 12000.0,
         "situacao": "Ativo"
     }
 ]

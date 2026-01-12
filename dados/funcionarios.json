@@ -1,29 +1,46 @@
 [
     {
         "id": 1,
-        "nome": "jonas",
-        "cpf": 1349595,
-        "telefone": 95968695,
-        "email": "ivedhfif@gmail.com",
-        "cargo": "dev",
+        "nome": "Jose Correia Dantas",
+        "cpf": 29948823,
+        "telefone": 98765434,
+        "email": "jose@gmail.com",
+        "cargo_id": 2,
+        "cargo_nome": "Desenvolvedor Pleno ",
+        "salario_base": 6000.0,
         "situacao": "Ativo"
     },
     {
         "id": 2,
-        "nome": "maria",
-        "cpf": 8388393,
-        "telefone": 2887272,
-        "email": "maria@gmail.com",
-        "cargo": "dev",
+        "nome": "Carol Farias Morais",
+        "cpf": 3758392,
+        "telefone": 87654567,
+        "email": "carol@gmail.com",
+        "cargo_id": 3,
+        "cargo_nome": "Desenvolvedor Senior ",
+        "salario_base": 10000.0,
         "situacao": "Ativo"
     },
     {
         "id": 3,
-        "nome": "antonio",
-        "cpf": 38838383,
-        "telefone": 38383321,
-        "email": "antonio@gmail.com",
-        "cargo": "dev",
+        "nome": "Marcos Cavalcanti Lopes",
+        "cpf": 63837294,
+        "telefone": 38827734,
+        "email": "marcos@gmail.com",
+        "cargo_id": 1,
+        "cargo_nome": "Desenvolvedor Junior",
+        "salario_base": 3000.0,
+        "situacao": "Ativo"
+    },
+    {
+        "id": 4,
+        "nome": "Vitoria Silva Pinheiros",
+        "cpf": 84737728,
+        "telefone": 288795053,
+        "email": "vitoria@gmail.com",
+        "cargo_id": 6,
+        "cargo_nome": "Administrador de Banco de Dados ",
+        "salario_base": 8000.0,
         "situacao": "Ativo"
     }
 ]

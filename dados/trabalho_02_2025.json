@@ -1,0 +1,14 @@
+{
+    "mes": 2,
+    "ano": 2025,
+    "frequencias": [
+        {
+            "funcionario_id": 2,
+            "nome": "Carol Farias Morais",
+            "dias_trabalhados": 25,
+            "faltas": 2,
+            "horas_extras": 20,
+            "destino_horas_extras": "REMUNERACAO"
+        }
+    ]
+}
