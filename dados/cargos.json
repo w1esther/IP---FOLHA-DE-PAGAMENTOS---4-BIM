@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+<<<<<<< HEAD
         "nome": "Desenvolvedor Junior",
         "salario_base": 3000.0,
         "situacao": "Ativo"
@@ -58,5 +59,10 @@
         "nome": "Gerente de TI",
         "salario_base": 12000.0,
         "situacao": "Ativo"
+=======
+        "nome": "dev",
+        "salario_base": 3000.0,
+        "situacao": "Ativo"
+>>>>>>> 86ce74f77e74f3e7c495019579243701ca855bd6
     }
 ]
