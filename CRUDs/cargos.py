@@ -112,9 +112,4 @@ def remover_cargo():
             salvar_json(CAMINHO_CARGOS, cargos)
             print("\nCargo removido com sucesso!\n")
             return
-
-<<<<<<< HEAD
     print("Cargo não encontrado.\n")
-=======
-    print("Cargo não encontrado.\n")
->>>>>>> 86ce74f77e74f3e7c495019579243701ca855bd6
