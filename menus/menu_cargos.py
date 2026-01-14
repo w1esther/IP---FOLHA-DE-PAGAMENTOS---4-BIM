@@ -33,8 +33,4 @@ def menu_cargos():
             atualizar_cargo()
 
         elif opcao_cargos == 0:
-<<<<<<< HEAD
             break
-=======
-            break
->>>>>>> 86ce74f77e74f3e7c495019579243701ca855bd6

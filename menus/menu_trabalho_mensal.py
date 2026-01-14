@@ -3,16 +3,16 @@ from CRUDs.trabalho_mensal import definir_mes_ano, registrar_frequencia, atualiz
 def menu_trabalho_mensal():
     while True:
         print("""
---- MENU TRABALHO MENSAL ---
+        --- MENU TRABALHO MENSAL ---
 
-1 - Definir mês/ano
-2 - Registrar frequência
-3 - Atualizar frequência
-4 - Listar frequências
-5 - Salvar dados do mês
-6 - Carregar mês anterior
-0 - Voltar
-""")
+        1 - Definir mês/ano
+        2 - Registrar frequência
+        3 - Atualizar frequência
+        4 - Listar frequências
+        5 - Salvar dados do mês
+        6 - Carregar mês anterior
+        0 - Voltar
+        """)
 
         opcao = input("Escolha: ")
 

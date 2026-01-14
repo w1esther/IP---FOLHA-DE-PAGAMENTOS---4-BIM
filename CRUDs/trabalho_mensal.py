@@ -16,11 +16,24 @@ def definir_mes_ano():
         print("Dados inválidos.")
         return
 
-    dados_trabalho["mes"] = mes
-    dados_trabalho["ano"] = ano
-    dados_trabalho["frequencias"] = []
+    nome_arquivo = f"trabalho_{mes:02d}_{ano}.json"
+    caminho = PASTA_DADOS + nome_arquivo
 
-    print(f"\nMês definido: {mes}/{ano}\n")
+    global dados_trabalho
+
+    try:
+        # TENTA carregar o mês já existente
+        dados_trabalho = ler_json(caminho)
+        print(f"\nMês {mes}/{ano} carregado com dados existentes.\n")
+
+    except FileNotFoundError:
+        # SE NÃO EXISTIR, cria um novo
+        dados_trabalho = {
+            "mes": mes,
+            "ano": ano,
+            "frequencias": []
+        }
+        print(f"\nNovo mês criado: {mes}/{ano}\n")
 
 
 
