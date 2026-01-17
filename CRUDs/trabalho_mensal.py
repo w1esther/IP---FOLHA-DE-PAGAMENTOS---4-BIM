@@ -22,12 +22,10 @@ def definir_mes_ano():
     global dados_trabalho
 
     try:
-        # TENTA carregar o mês já existente
         dados_trabalho = ler_json(caminho)
         print(f"\nMês {mes}/{ano} carregado com dados existentes.\n")
 
     except FileNotFoundError:
-        # SE NÃO EXISTIR, cria um novo
         dados_trabalho = {
             "mes": mes,
             "ano": ano,
