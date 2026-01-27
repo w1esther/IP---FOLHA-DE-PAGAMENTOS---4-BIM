@@ -2,6 +2,7 @@ from utils.arquivo_json import ler_json, salvar_json
 
 PASTA_DADOS = 'C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\'
 
+dados_trabalho_geral = []
 dados_trabalho = {
     "mes": None,
     "ano": None,
@@ -36,6 +37,10 @@ def definir_mes_ano():
 
 
 def registrar_frequencia():
+    # if not isinstance(dados_trabalho, dict) or not dados_trabalho.get("mes"):
+    #     print("Defina o mês/ano primeiro.\n")
+    #     return
+    print(type(dados_trabalho))
     if not dados_trabalho["mes"]:
         print("Defina o mês/ano primeiro.\n")
         return
@@ -49,6 +54,7 @@ def registrar_frequencia():
         return
 
     for f in funcionarios:
+        
         if f["id"] == id_func:
             dias = int(input("Dias trabalhados: "))
             faltas = int(input("Faltas: "))
