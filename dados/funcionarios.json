@@ -42,5 +42,16 @@
         "cargo_nome": "Administrador de Banco de Dados ",
         "salario_base": 8000.0,
         "situacao": "Ativo"
+    },
+    {
+        "id": 5,
+        "nome": "Mariana Oliveira Pinheiros",
+        "cpf": 3948484,
+        "telefone": 948483,
+        "email": "marianapinheiros@gmail.com",
+        "cargo_id": 5,
+        "cargo_nome": "Analista de Testes",
+        "salario_base": 4500.0,
+        "situacao": "Ativo"
     }
 ]

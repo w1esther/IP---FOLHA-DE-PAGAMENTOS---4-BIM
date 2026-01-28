@@ -1,0 +1,38 @@
+[
+    {
+        "mes": 4,
+        "ano": 2026,
+        "frequencias": [
+            {
+                "funcionario_id": 2,
+                "nome": "Carol Farias Morais",
+                "dias_trabalhados": 26,
+                "faltas": 1,
+                "horas_extras": 15,
+                "destino_horas_extras": "REMUNERACAO"
+            },
+            {
+                "funcionario_id": 3,
+                "nome": "Marcos Cavalcanti Lopes",
+                "dias_trabalhados": 27,
+                "faltas": 0,
+                "horas_extras": 0,
+                "destino_horas_extras": "NENHUM"
+            }
+        ]
+    },
+    {
+        "mes": 3,
+        "ano": 2026,
+        "frequencias": [
+            {
+                "funcionario_id": 2,
+                "nome": "Carol Farias Morais",
+                "dias_trabalhados": 27,
+                "faltas": 0,
+                "horas_extras": 20,
+                "destino_horas_extras": "FERIAS"
+            }
+        ]
+    }
+]

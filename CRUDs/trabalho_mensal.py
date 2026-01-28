@@ -1,63 +1,78 @@
 from utils.arquivo_json import ler_json, salvar_json
+import os
+
 
 PASTA_DADOS = 'C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\'
+ARQUIVO_TRABALHO = PASTA_DADOS + 'trabalho_mensal.json'
 
-dados_trabalho_geral = []
 dados_trabalho = {
     "mes": None,
     "ano": None,
     "frequencias": []
 }
 
+
+def carregar_trabalhos():
+    if not os.path.exists(ARQUIVO_TRABALHO):
+        salvar_json(ARQUIVO_TRABALHO, [])
+        return []
+    return ler_json(ARQUIVO_TRABALHO)
+
+
+def salvar_trabalhos(lista):
+    salvar_json(ARQUIVO_TRABALHO, lista)
+
+
+
 def definir_mes_ano():
-    try:
-        mes = int(input("Digite o mês (1-12): "))
-        ano = int(input("Digite o ano: "))
-        if mes > 12 or mes < 12:
-            print('mês inexistente!')
-            return 
-    except ValueError:
-        print("Dados inválidos.")
-        return
-
-    nome_arquivo = f"trabalho_{mes:02d}_{ano}.json"
-    caminho = PASTA_DADOS + nome_arquivo
-
     global dados_trabalho
 
     try:
-        dados_trabalho = ler_json(caminho)
-        print(f"\nMês {mes}/{ano} carregado com dados existentes.\n")
+        mes = int(input("Digite o mês (1-12): "))
+        ano = int(input("Digite o ano: "))
+        if mes < 1 or mes > 12:
+            print("Mês inválido.\n")
+            return
+    except ValueError:
+        print("Dados inválidos.\n")
+        return
 
-    except FileNotFoundError:
-        dados_trabalho = {
-            "mes": mes,
-            "ano": ano,
-            "frequencias": []
-        }
-        print(f"\nNovo mês criado: {mes}/{ano}\n")
+    trabalhos = carregar_trabalhos()
+
+    for t in trabalhos:
+        if t["mes"] == mes and t["ano"] == ano:
+            dados_trabalho = t
+            print(f"\nMês {mes}/{ano} carregado.\n")
+            return
+
+    dados_trabalho = {
+        "mes": mes,
+        "ano": ano,
+        "frequencias": []
+    }
+
+    trabalhos.append(dados_trabalho)
+    salvar_trabalhos(trabalhos)
+
+    print(f"\nNovo mês {mes}/{ano} criado.\n")
+
 
 
 
 def registrar_frequencia():
-    # if not isinstance(dados_trabalho, dict) or not dados_trabalho.get("mes"):
-    #     print("Defina o mês/ano primeiro.\n")
-    #     return
-    print(type(dados_trabalho))
     if not dados_trabalho["mes"]:
         print("Defina o mês/ano primeiro.\n")
         return
 
-    funcionarios = ler_json("C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\funcionarios.json")
+    funcionarios = ler_json(PASTA_DADOS + "funcionarios.json")
 
     try:
         id_func = int(input("ID do funcionário: "))
     except ValueError:
-        print("ID inválido.")
+        print("ID inválido.\n")
         return
 
     for f in funcionarios:
-        
         if f["id"] == id_func:
             dias = int(input("Dias trabalhados: "))
             faltas = int(input("Faltas: "))
@@ -65,18 +80,14 @@ def registrar_frequencia():
 
             destino = "NENHUM"
             if horas_extras > 0:
-                print("\nComo deseja utilizar as horas extras?")
-                print("1 - Converter em férias (banco de horas)")
-                print("2 - Receber como remuneração adicional")
-
+                print("\n1 - Converter em férias")
+                print("2 - Receber como remuneração")
                 opcao = input("Escolha: ")
 
                 if opcao == "1":
                     destino = "FERIAS"
                 elif opcao == "2":
                     destino = "REMUNERACAO"
-                else:
-                    print("Opção inválida. Definido como NÃO CONVERTIDO.")
 
             dados_trabalho["frequencias"].append({
                 "funcionario_id": f["id"],
@@ -87,6 +98,7 @@ def registrar_frequencia():
                 "destino_horas_extras": destino
             })
 
+            salvar_trabalho_mensal()
             print("\nFrequência registrada.\n")
             return
 
@@ -94,18 +106,19 @@ def registrar_frequencia():
 
 
 
+
 def atualizar_frequencia():
     try:
         id_func = int(input("ID do funcionário: "))
     except ValueError:
-        print("ID inválido.")
+        print("ID inválido.\n")
         return
 
     for freq in dados_trabalho["frequencias"]:
         if freq["funcionario_id"] == id_func:
-            dias = input("Novos dias trabalhados (ENTER mantém): ")
-            faltas = input("Novas faltas (ENTER mantém): ")
-            horas = input("Novas horas extras (ENTER mantém): ")
+            dias = input("Dias trabalhados (ENTER mantém): ")
+            faltas = input("Faltas (ENTER mantém): ")
+            horas = input("Horas extras (ENTER mantém): ")
 
             if dias:
                 freq["dias_trabalhados"] = int(dias)
@@ -114,19 +127,7 @@ def atualizar_frequencia():
             if horas:
                 freq["horas_extras"] = int(horas)
 
-                if int(horas) > 0:
-                    print("\nDestino das horas extras:")
-                    print("1 - Férias")
-                    print("2 - Remuneração adicional")
-                    opcao = input("Escolha: ")
-
-                    if opcao == "1":
-                        freq["destino_horas_extras"] = "FERIAS"
-                    elif opcao == "2":
-                        freq["destino_horas_extras"] = "REMUNERACAO"
-                else:
-                    freq["destino_horas_extras"] = "NENHUM"
-
+            salvar_trabalho_mensal()
             print("\nFrequência atualizada.\n")
             return
 
@@ -134,48 +135,60 @@ def atualizar_frequencia():
 
 
 
+
 def listar_frequencias():
-    if not dados_trabalho["frequencias"]:
-        print("Nenhuma frequência registrada.\n")
+    trabalhos = carregar_trabalhos()
+
+    if not trabalhos:
+        print("Nenhum mês registrado.\n")
         return
 
-    print(f"\n--- FREQUÊNCIA {dados_trabalho['mes']}/{dados_trabalho['ano']} ---\n")
+    for t in trabalhos:
+        print(f"\n=== {t['mes']:02d}/{t['ano']} ===")
 
-    for f in dados_trabalho["frequencias"]:
-        print(f"ID: {f['funcionario_id']}")
-        print(f"Nome: {f['nome']}")
-        print(f"Dias trabalhados: {f['dias_trabalhados']}")
-        print(f"Faltas: {f['faltas']}")
-        print(f"Horas extras: {f['horas_extras']}")
-        print(f"Destino das horas extras: {f['destino_horas_extras']}")
-        print("-" * 30)
+        if not t["frequencias"]:
+            print("Nenhuma frequência registrada.")
+            continue
+
+        for f in t["frequencias"]:
+            print(f"ID: {f['funcionario_id']}")
+            print(f"Nome: {f['nome']}")
+            print(f"Dias trabalhados: {f['dias_trabalhados']}")
+            print(f"Faltas: {f['faltas']}")
+            print(f"Horas extras: {f['horas_extras']}")
+            print(f"Destino horas extras: {f['destino_horas_extras']}")
+            print("-" * 30)
+
 
 
 
 def salvar_trabalho_mensal():
-    if not dados_trabalho["mes"]:
-        print("Nada para salvar.\n")
-        return
+    trabalhos = carregar_trabalhos()
 
-    nome_arquivo = f"trabalho_{dados_trabalho['mes']:02d}_{dados_trabalho['ano']}.json"
-    caminho = PASTA_DADOS + nome_arquivo
+    for i, t in enumerate(trabalhos):
+        if t["mes"] == dados_trabalho["mes"] and t["ano"] == dados_trabalho["ano"]:
+            trabalhos[i] = dados_trabalho
+            break
 
-    salvar_json(caminho, dados_trabalho)
-    print(f"\nDados salvos em {nome_arquivo}\n")
-
+    salvar_trabalhos(trabalhos)
 
 
 def carregar_trabalho_mensal():
-    nome = input("Digite o nome do arquivo (ex: trabalho_01_2026.json): ")
-    caminho = PASTA_DADOS + nome
+    global dados_trabalho
 
     try:
-        dados = ler_json(caminho)
-    except FileNotFoundError:
-        print("Arquivo não encontrado.\n")
+        mes = int(input("Digite o mês: "))
+        ano = int(input("Digite o ano: "))
+    except ValueError:
+        print("Dados inválidos.\n")
         return
 
-    global dados_trabalho
-    dados_trabalho = dados
+    trabalhos = carregar_trabalhos()
 
-    print("\nDados do mês carregados.\n")
+    for t in trabalhos:
+        if t["mes"] == mes and t["ano"] == ano:
+            dados_trabalho = t
+            print(f"\nMês {mes}/{ano} carregado com sucesso.\n")
+            return
+
+    print("Mês/ano não encontrado.\n")

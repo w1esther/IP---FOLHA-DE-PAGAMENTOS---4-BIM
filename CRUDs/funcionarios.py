@@ -226,7 +226,7 @@ def buscar_funcionario_por_id():
             print(f"CPF: {funcionario['cpf']}")
             print(f"Telefone: {funcionario['telefone']}")
             print(f"Email: {funcionario['email']}")
-            print(f"Cargo: {funcionario['cargo']}")
+            print(f"Cargo: {funcionario['cargo_nome']}")
             print(f"Situação: {funcionario['situacao']}\n")
             return
 
