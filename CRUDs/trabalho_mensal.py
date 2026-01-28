@@ -13,6 +13,9 @@ def definir_mes_ano():
     try:
         mes = int(input("Digite o mês (1-12): "))
         ano = int(input("Digite o ano: "))
+        if mes > 12 or mes < 12:
+            print('mês inexistente!')
+            return 
     except ValueError:
         print("Dados inválidos.")
         return
