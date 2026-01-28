@@ -1,7 +1,7 @@
 import os
 from utils.arquivo_json import ler_json, salvar_json
  
-CAMINHO_CARGOS = "C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\cargos.json"
+CAMINHO_CARGOS = "..\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\cargos.json"
 
 def criar_cargo():
     print("\n--- CADASTRO DE CARGO ---")

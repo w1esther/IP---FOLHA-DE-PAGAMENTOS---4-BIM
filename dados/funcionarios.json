@@ -22,17 +22,6 @@
         "situacao": "Ativo"
     },
     {
-        "id": 3,
-        "nome": "Marcos Cavalcanti Lopes",
-        "cpf": 63837294,
-        "telefone": 38827734,
-        "email": "marcos@gmail.com",
-        "cargo_id": 1,
-        "cargo_nome": "Desenvolvedor Junior",
-        "salario_base": 3000.0,
-        "situacao": "Ativo"
-    },
-    {
         "id": 4,
         "nome": "Vitoria Silva Pinheiros",
         "cpf": 84737728,
@@ -52,6 +41,17 @@
         "cargo_id": 5,
         "cargo_nome": "Analista de Testes",
         "salario_base": 4500.0,
+        "situacao": "Ativo"
+    },
+    {
+        "id": 6,
+        "nome": "Gustavo Pereira Gomes",
+        "cpf": 293882,
+        "telefone": 7772823,
+        "email": "gustavogomes@gmail.com",
+        "cargo_id": 1,
+        "cargo_nome": "Desenvolvedor Junior",
+        "salario_base": 3000.0,
         "situacao": "Ativo"
     }
 ]

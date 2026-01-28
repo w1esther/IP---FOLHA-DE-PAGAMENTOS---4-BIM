@@ -1,8 +1,10 @@
 from utils.arquivo_json import ler_json, salvar_json
 
-CAMINHO_FUNCIONARIOS = "C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\funcionarios.json"
+# CAMINHO_FUNCIONARIOS = "C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\funcionarios.json"
+CAMINHO_FUNCIONARIOS = "..\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\funcionarios.json"
 
-CAMINHO_CARGOS = "C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\cargos.json"
+# CAMINHO_CARGOS = "C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\cargos.json"
+CAMINHO_CARGOS = "..\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\cargos.json"
 
 def escolher_cargo():
     cargos = ler_json(CAMINHO_CARGOS)
@@ -85,7 +87,7 @@ def listar_funcionarios():
         print(f"CPF: {funcionario['cpf']}")
         print(f"Telefone: {funcionario['telefone']}")
         print(f"Email: {funcionario['email']}")
-        print(f"Cargo: {funcionario['cargo']}")
+        print(f"Cargo: {funcionario['cargo_nome']}")
         print(f"Situação: {funcionario['situacao']}")
         print("-" * 30)
 
@@ -142,8 +144,6 @@ def atualizar_funcionario():
                 funcionario["telefone"] = int(novo_telefone)
             if novo_email:
                 funcionario["email"] = novo_email
-
-            # 🔹 ALTERAÇÃO DE CARGO (opcional)
             if opcao_cargo == "1":
                 cargo_escolhido = escolher_cargo()
                 if cargo_escolhido:
@@ -184,7 +184,7 @@ def remover_funcionario():
             print("\nFuncionário encontrado:")
             print(f"ID: {funcionario['id']}")
             print(f"Nome: {funcionario['nome']}")
-            print(f"Cargo: {funcionario['cargo']}")
+            print(f"Cargo: {funcionario['cargo_id']}")
 
             confirmacao = input(
                 "\nTem certeza que deseja REMOVER DEFINITIVAMENTE? (S/N): "

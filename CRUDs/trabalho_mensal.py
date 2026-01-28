@@ -2,7 +2,7 @@ from utils.arquivo_json import ler_json, salvar_json
 import os
 
 
-PASTA_DADOS = 'C:\\Users\\w1mar\\OneDrive\\Documentos\\GitHub\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\'
+PASTA_DADOS = '..\\IP---FOLHA-DE-PAGAMENTOS---4-BIM\\dados\\'
 ARQUIVO_TRABALHO = PASTA_DADOS + 'trabalho_mensal.json'
 
 dados_trabalho = {

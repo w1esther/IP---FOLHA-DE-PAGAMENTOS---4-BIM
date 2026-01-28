@@ -34,5 +34,19 @@
                 "destino_horas_extras": "FERIAS"
             }
         ]
+    },
+    {
+        "mes": 6,
+        "ano": 2026,
+        "frequencias": [
+            {
+                "funcionario_id": 4,
+                "nome": "Vitoria Silva Pinheiros",
+                "dias_trabalhados": 26,
+                "faltas": 2,
+                "horas_extras": 40,
+                "destino_horas_extras": "REMUNERACAO"
+            }
+        ]
     }
 ]
