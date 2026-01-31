@@ -1,0 +1,60 @@
+[
+    {
+        "mes": 3,
+        "ano": 2026,
+        "salarios": [
+            {
+                "funcionario_id": 2,
+                "nome": "Carol Farias Morais",
+                "salario_base": 10000.0,
+                "desconto_faltas": 0.0,
+                "valor_horas_extras": 0,
+                "salario_final": 10000.0
+            }
+        ]
+    },
+    {
+        "mes": 4,
+        "ano": 2026,
+        "salarios": [
+            {
+                "funcionario_id": 2,
+                "nome": "Carol Farias Morais",
+                "salario_base": 10000.0,
+                "desconto_faltas": 333.33,
+                "valor_horas_extras": 1022.73,
+                "salario_final": 10689.39
+            },
+            {
+                "funcionario_id": 5,
+                "nome": "Mariana Oliveira Pinheiros",
+                "salario_base": 4500.0,
+                "desconto_faltas": 0.0,
+                "valor_horas_extras": 0,
+                "salario_final": 4500.0
+            },
+            {
+                "funcionario_id": 1,
+                "nome": "Jose Correia Dantas",
+                "salario_base": 6000.0,
+                "desconto_faltas": 200.0,
+                "valor_horas_extras": 613.64,
+                "salario_final": 6413.64
+            }
+        ]
+    },
+    {
+        "mes": 6,
+        "ano": 2026,
+        "salarios": [
+            {
+                "funcionario_id": 4,
+                "nome": "Vitoria Silva Pinheiros",
+                "salario_base": 8000.0,
+                "desconto_faltas": 533.33,
+                "valor_horas_extras": 2181.82,
+                "salario_final": 9648.48
+            }
+        ]
+    }
+]

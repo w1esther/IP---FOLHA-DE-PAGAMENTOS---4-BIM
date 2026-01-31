@@ -1,5 +1,18 @@
+from CRUDs.relatorios import gerar_relatorio_salarios
+
 def menu_relatorios():
+    while True:
+        print('\n\n Selecione o número correspondente à operação que deseja realizar com os relatórios: z\n\n - 1 Gerar relatório de pagamento dos salários \n\n  - 0 Sair do sistema \n\n')
 
-    print('\n\n Selecione o número correspondente à operação que deseja realizar com os relatórios: z\n\n - 1 Gerar relatório de pagamento anual dos salários \n\n - 2 Gerar relatório de pagamento de determinado mês \n\n - 3 Gerar relatório de pagamento de determinado funcionário \n\n - 0 Sair do sistema \n\n')
+        try:
+            opcao_relatorios = int(input("Digite a opção: "))
+        except ValueError:
+            print("\nDigite apenas números!\n")
+            continue
 
-    opcao_relatorio = int(input('Digite a operação desejada: '))
+        if opcao_relatorios == 1:
+            gerar_relatorio_salarios()
+
+        elif opcao_relatorios == 0:
+            break
+

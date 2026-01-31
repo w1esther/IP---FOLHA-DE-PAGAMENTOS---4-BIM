@@ -18,6 +18,22 @@
                 "faltas": 0,
                 "horas_extras": 0,
                 "destino_horas_extras": "NENHUM"
+            },
+            {
+                "funcionario_id": 5,
+                "nome": "Mariana Oliveira Pinheiros",
+                "dias_trabalhados": 30,
+                "faltas": 0,
+                "horas_extras": 10,
+                "destino_horas_extras": "NENHUM"
+            },
+            {
+                "funcionario_id": 1,
+                "nome": "Jose Correia Dantas",
+                "dias_trabalhados": 29,
+                "faltas": 1,
+                "horas_extras": 15,
+                "destino_horas_extras": "REMUNERACAO"
             }
         ]
     },

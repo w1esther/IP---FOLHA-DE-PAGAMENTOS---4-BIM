@@ -53,5 +53,16 @@
         "cargo_nome": "Desenvolvedor Junior",
         "salario_base": 3000.0,
         "situacao": "Ativo"
+    },
+    {
+        "id": 7,
+        "nome": "Marcos Almeida Campos",
+        "cpf": 34988493,
+        "telefone": 24556322,
+        "email": "marcoscampos@gmail.com",
+        "cargo_id": 7,
+        "cargo_nome": "Analista de Segurança da Informação",
+        "salario_base": 7500.0,
+        "situacao": "Ativo"
     }
 ]

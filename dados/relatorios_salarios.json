@@ -1,0 +1,26 @@
+[
+    {
+        "mes": 4,
+        "ano": 2026,
+        "total_funcionarios": 3,
+        "total_pago": 21603.03,
+        "media_salarial": 7201.01,
+        "salarios": [
+            {
+                "funcionario_id": 2,
+                "nome": "Carol Farias Morais",
+                "salario_final": 10689.39
+            },
+            {
+                "funcionario_id": 5,
+                "nome": "Mariana Oliveira Pinheiros",
+                "salario_final": 4500.0
+            },
+            {
+                "funcionario_id": 1,
+                "nome": "Jose Correia Dantas",
+                "salario_final": 6413.64
+            }
+        ]
+    }
+]
